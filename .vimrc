@@ -4,5 +4,5 @@ syntax on
 colo peachpuff
 set ignorecase
 set smartcase
-set number
+set ruler
 
