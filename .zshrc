@@ -97,7 +97,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export GOPATH=~/go
-export PATH=${GOPATH}/bin:/usr/local/go/bin:$PATH
+PATH=${GOPATH}/bin:/usr/local/go/bin:$PATH
+export PATH=~/scripts:${GOPATH}/bin:/usr/local/go/bin:$PATH
 
 alias spr="mplayer -cache 4096 -cache-min 50 -afm ffmpeg https://schlagerplanet.hoerradar.de/schlagerplanet-deutsch-mp3-hq"
 # alias spr2="mplayer -nocache -afm ffmpeg http://wknc.sma.ncsu.edu:8000/wknchd1.mp3"
@@ -133,3 +134,7 @@ alias 'glg=git log --oneline --all --graph --decorate'
 
 #alias ng-b='\.\/t25.sh 300 n-gage'
 #alias ng='\.\/t25.sh 1500 take-5'
+
+alias glnd="goland . &> /dev/null &"
+
+export HISTCONTROL=ignoreboth
