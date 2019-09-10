@@ -136,5 +136,7 @@ alias 'glg=git log --oneline --all --graph --decorate'
 #alias ng='\.\/t25.sh 1500 take-5'
 
 alias glnd="goland . &> /dev/null &"
+alias fh="history | fzf"
 
 export HISTCONTROL=ignoreboth
+
