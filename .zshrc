@@ -140,3 +140,14 @@ alias fh="history | fzf"
 
 export HISTCONTROL=ignoreboth
 
+export LIBVIRT_DEFAULT_URI=qemu:///system
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/ncoder/google-cloud-sdk/path.zsh.inc' ]; then . '/home/ncoder/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/ncoder/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/ncoder/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/home/ncoder/.crc/bin:$PATH"
+alias owss="oc whoami --show-server"
+alias gbd="cd $(git rev-parse --show-toplevel)"
