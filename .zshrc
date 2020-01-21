@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/ncoder/.oh-my-zsh"
+export ZSH="/home/ncoder/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -100,7 +100,7 @@ export GOPATH=~/go
 PATH=${GOPATH}/bin:/usr/local/go/bin:$PATH
 export PATH=~/scripts:${GOPATH}/bin:/usr/local/go/bin:$PATH
 
-alias spr="mplayer -cache 4096 -cache-min 50 -afm ffmpeg https://schlagerplanet.hoerradar.de/schlagerplanet-deutsch-mp3-hq"
+#alias spr="mplayer -cache 4096 -cache-min 50 -afm ffmpeg https://schlagerplanet.hoerradar.de/schlagerplanet-deutsch-mp3-hq"
 # alias spr2="mplayer -nocache -afm ffmpeg http://wknc.sma.ncsu.edu:8000/wknchd1.mp3"
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
@@ -131,7 +131,6 @@ export PATH=$PATH:/usr/local/go/bin
 alias kc=kubectl
 
 alias 'glg=git log --oneline --all --graph --decorate'
-
 #alias ng-b='\.\/t25.sh 300 n-gage'
 #alias ng='\.\/t25.sh 1500 take-5'
 
@@ -145,9 +144,12 @@ export LIBVIRT_DEFAULT_URI=qemu:///system
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/ncoder/google-cloud-sdk/path.zsh.inc' ]; then . '/home/ncoder/google-cloud-sdk/path.zsh.inc'; fi
-
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/ncoder/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/ncoder/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/home/ncoder/.crc/bin:$PATH"
 alias owss="oc whoami --show-server"
-alias gbd="cd $(git rev-parse --show-toplevel)"
+alias gbd='cd $(git rev-parse --show-toplevel)'
+
+function wdn() {
+  watch -d -n 1 "$@"
+}
