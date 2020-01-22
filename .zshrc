@@ -163,3 +163,6 @@ function looooooooong {
     echo -e "\n⏰  $result"
     ( espeak -s 150 -p 10 $result 2>&1 > /dev/null & )
 }
+
+source ~/.goto
+
