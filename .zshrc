@@ -150,6 +150,16 @@ export PATH="/home/ncoder/.crc/bin:$PATH"
 alias owss="oc whoami --show-server"
 alias gbd='cd $(git rev-parse --show-toplevel)'
 
-function wdn() {
-  watch -d -n 1 "$@"
+alias wdn="watch -n 1 -d $1"
+
+function looooooooong {
+    START=$(date +%s.%N)
+    $*
+    EXIT_CODE=$?
+    END=$(date +%s.%N)
+    DIFF=$(echo "$END - $START" | bc)
+    RES=$(python -c "diff = $DIFF; min = int(diff / 60); print('%s min' % min)")
+    result="$1 completed in $RES, exit code $EXIT_CODE."
+    echo -e "\n⏰  $result"
+    ( espeak -s 150 -p 10 $result 2>&1 > /dev/null & )
 }
