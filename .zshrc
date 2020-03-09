@@ -129,6 +129,7 @@ export JAVA_HOME=${HOME}/.sdkman/candidates/java/current
 export PATH=$PATH:/usr/local/go/bin
 
 alias kc=kubectl
+alias k=kubectl
 
 alias 'glg=git log --oneline --all --graph --decorate'
 #alias ng-b='\.\/t25.sh 300 n-gage'
@@ -166,3 +167,5 @@ function looooooooong {
 
 source ~/.goto
 
+alias ep="date '+%s'"
+alias cpwd="xclip <(pwd)"
