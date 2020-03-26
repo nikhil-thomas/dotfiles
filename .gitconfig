@@ -1,0 +1,33 @@
+[includeIf "gitdir:~/go/src/github.com/openshift/**"]
+path=/home/ncoder/.config/git/config.d/redhat.gitconfig
+
+[includeIf "gitdir:/home/ncoder/go/src/github.com/tektoncd/**"]
+path=/home/ncoder/.config/git/config.d/redhat.gitconfig
+
+[includeIf "gitdir:/home/ncoder/go/src/github.com/nikhil-thomas/**"]
+path=/home/ncoder/.config/git/config.d/nikhil.gitconfig
+
+[includeIf "gitdir:~/go/src/github.com/operator-framework/**"]
+path=/home/ncoder/.config/git/config.d/redhat.gitconfig
+
+[includeIf "gitdir:/home/ncoder/01_work/**"]
+path=/home/ncoder/.config/git/config.d/redhat.gitconfig
+
+
+[includeIf "gitdir:/home/ncoder/02_wos/**"]
+path=/home/ncoder/.config/git/config.d/nikhil.gitconfig
+
+[core]
+	excludesfile = /home/ncoder/.gitignore_global
+[alias]
+	gtree = log --oneline --graph --all --decorate
+	st = status
+	lo = log --oneline
+	br = branch
+	co = checkout
+	ci = commit
+	us = reset HEAD --
+	ll = log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --numstat
+  editconflicted = "!f() {git ls-files --unmerged | cut -f2 | sort -u ; }; $EDITOR"
+	cof = !git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout
+	bvv = branch -vv
