@@ -169,4 +169,3 @@ source ~/.goto
 
 alias ep="date '+%s'"
 alias cpwd="xclip <(pwd)"
-alias docker=podman
