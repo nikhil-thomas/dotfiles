@@ -13,6 +13,10 @@ path=/home/ncoder/.config/git/config.d/redhat.gitconfig
 [includeIf "gitdir:/home/ncoder/01_work/**"]
 path=/home/ncoder/.config/git/config.d/redhat.gitconfig
 
+[includeIf "gitdir:/home/ncoder/work/**"]
+path=/home/ncoder/.config/git/config.d/redhat.gitconfig
+
+
 
 [includeIf "gitdir:/home/ncoder/02_wos/**"]
 path=/home/ncoder/.config/git/config.d/nikhil.gitconfig
