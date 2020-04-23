@@ -169,3 +169,7 @@ source ~/.goto
 
 alias ep="date '+%s'"
 alias cpwd="xclip <(pwd)"
+alias p12n-ts='date --utc "+%y%y%m%d%H%M"'
+
+export PS1=$'╭─%F{yellow}%n%f%F{cyan}@%F{red}%M%f %B%F{blue}%~%f%b $(ruby_prompt_info) $(git_prompt_info)\n╰─%f➤ %f '
+
