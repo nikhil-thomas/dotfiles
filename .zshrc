@@ -171,5 +171,18 @@ alias ep="date '+%s'"
 alias cpwd="xclip <(pwd)"
 alias p12n-ts='date --utc "+%y%y%m%d%H%M"'
 
-export PS1=$'╭─%F{yellow}%n%f%F{cyan}@%F{red}%M%f %B%F{blue}%~%f%b $(ruby_prompt_info) $(git_prompt_info)\n╰─%f➤ %f '
+function mkcd() {
+  mkdir -p $1
+  cd $_
+}
+
+alias osdk=operator-sdk
+
+function pane-title() {
+  if [[ -z $1 ]]; then
+    echo 'usage: pane-title <pane title>'
+    return 0
+  fi
+  printf '\033]2;%s\033\\' $1
+}
 

@@ -1,6 +1,9 @@
 [includeIf "gitdir:~/go/src/github.com/openshift/**"]
 path=/home/ncoder/.config/git/config.d/redhat.gitconfig
 
+[includeIf "gitdir:~/go/src/github.com/openshift-pipelines/**"]
+path=/home/ncoder/.config/git/config.d/redhat.gitconfig
+
 [includeIf "gitdir:/home/ncoder/go/src/github.com/tektoncd/**"]
 path=/home/ncoder/.config/git/config.d/redhat.gitconfig
 
