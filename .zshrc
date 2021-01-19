@@ -75,11 +75,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vi'
+else
+  export EDITOR='emacs -nw'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -97,6 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export GOPATH=~/go
+export GOROOT=/usr/local/go
 PATH=${GOPATH}/bin:/usr/local/go/bin:$PATH
 export PATH=~/scripts:${GOPATH}/bin:/usr/local/go/bin:$PATH
 
@@ -185,4 +186,14 @@ function pane-title() {
   fi
   printf '\033]2;%s\033\\' $1
 }
+
+function seconds {
+  if [[ -z $* ]]; then
+    echo 'usage seconds <date>'
+    exit 1
+  fi
+  echo $(( $(date +%s -d "$*") - $(date +%s) ))
+}
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+eval "$(direnv hook zsh)"
 
