@@ -197,3 +197,7 @@ function seconds {
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 eval "$(direnv hook zsh)"
 
+function krname {
+  resource=$1
+  kc get pod | fzf | awk '{print $1}')
+}
