@@ -203,3 +203,5 @@ function krname {
 }
 
 set -o noclobber
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
