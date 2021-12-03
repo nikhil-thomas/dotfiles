@@ -63,7 +63,7 @@ ZSH_THEME="gnzh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git golang fedora docker oc sudo)
-plugins=(dnf sudo)
+plugins=(git dnf sudo)
 
 source $ZSH/oh-my-zsh.sh
 
