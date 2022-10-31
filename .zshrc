@@ -112,3 +112,6 @@ which go > /dev/null 2>&1 && PATH=$(go env GOPATH)/bin:$PATH
 
 PATH=${PATH}:${HOME}/.krew/bin
 PATH=${PATH}:${HOME}/.local/bin
+
+alias glg="git log --oneline --graph --decorate --all"
+
