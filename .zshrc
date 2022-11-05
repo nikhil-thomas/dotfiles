@@ -115,3 +115,4 @@ PATH=${PATH}:${HOME}/.local/bin
 
 alias glg="git log --oneline --graph --decorate --all"
 
+PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
