@@ -5,6 +5,8 @@ gnu-sed
 go
 htop
 jq
+kustomize
+tldr
 tmux
 tree
 watch
