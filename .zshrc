@@ -118,3 +118,14 @@ alias glg="git log --oneline --graph --decorate --all"
 PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 alias docker=podman
+
+function mr-grok() {
+  worktree_name=${1}
+  if [[ -z ${worktree_name} ]]; then
+    echo empty worktree name
+    echo usage ${0} \<worktree-name\>
+    return 1
+  fi
+  echo hello
+}
+
