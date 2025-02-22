@@ -98,12 +98,6 @@ source $ZSH/oh-my-zsh.sh
 
 PATH=${HOME}/bin:${PATH}
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/nikhilthomas/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/nikhilthomas/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/nikhilthomas/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nikhilthomas/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
 alias kc=kubectl
 complete __start_kubectl kc
 . <(kc completion zsh)
@@ -117,7 +111,7 @@ alias glg="git log --oneline --graph --decorate --all"
 
 PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
-alias docker=podman
+# alias docker=podman
 
 function mr-grok() {
   worktree_name=${1}
@@ -126,6 +120,20 @@ function mr-grok() {
     echo usage ${0} \<worktree-name\>
     return 1
   fi
-  echo hello
+  git worktree add -b ${worktree_name} worktrees/code-grok/${worktree_name} main
 }
 
+
+[ -f "/Users/nikthoma/.ghcup/env" ] && source "/Users/nikthoma/.ghcup/env" # ghcup-env
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/nikthoma/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/nikthoma/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/nikthoma/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nikthoma/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+export GOPATH=${HOME}/go
+export GOROOT=/usr/local/go
+export GOMODCACHE=$GOPATH/pkg/mod
+
+
+[[ -s "/Users/nikthoma/.gvm/scripts/gvm" ]] && source "/Users/nikthoma/.gvm/scripts/gvm"
